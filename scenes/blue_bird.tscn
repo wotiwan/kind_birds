@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx4coilva8stw"]
+
+[ext_resource type="Texture2D" uid="uid://gg0kmgoghlel" path="res://assets/textures/blue_bird.png" id="1_csb7b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_csb7b"]
+radius = 29.017237
+
+[sub_resource type="Animation" id="Animation_csb7b"]
+resource_name = "idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_brxb5"]
+_data = {
+&"idle": SubResource("Animation_csb7b")
+}
+
+[node name="BlueBird" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9.999999, -2.9999998)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_csb7b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_csb7b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_brxb5")
+}
