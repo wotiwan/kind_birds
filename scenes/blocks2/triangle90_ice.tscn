@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4bl5k1spwwdq"]
+
+[ext_resource type="Texture2D" uid="uid://cenvh5vsx63gu" path="res://assets/textures/razdel_blocks/triangle90_ice.png" id="1_j30f4"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_j30f4"]
+a = Vector2(0, -68)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kd1gt"]
+a = Vector2(-38, -38)
+b = Vector2(38, 37)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qhxbn"]
+a = Vector2(-38, 38)
+b = Vector2(38, 38)
+
+[node name="Triangle90Ice" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j30f4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-38, 29)
+shape = SubResource("SegmentShape2D_j30f4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_kd1gt")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_qhxbn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

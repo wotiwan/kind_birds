@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=3 uid="uid://b7h8fe2awq2xd"]
+
+[ext_resource type="Texture2D" uid="uid://ux6fxf4g2bwo" path="res://assets/textures/41524.jpg" id="1_2xhf7"]
+[ext_resource type="PackedScene" uid="uid://bx4coilva8stw" path="res://scenes/bird_or_enemy/blue_bird_1.tscn" id="2_nq57p"]
+[ext_resource type="PackedScene" uid="uid://bwn0wsjearxo5" path="res://scenes/bird_or_enemy/green_bird_1.tscn" id="3_b578h"]
+[ext_resource type="PackedScene" uid="uid://c7yfsyym13dym" path="res://scenes/bird_or_enemy/yellow_bird_1.tscn" id="4_3qhfl"]
+[ext_resource type="PackedScene" uid="uid://xbty046w77kh" path="res://scenes/bird_or_enemy/white_cat_1.tscn" id="5_ry1uj"]
+[ext_resource type="PackedScene" uid="uid://pvt23ypo3ehq" path="res://scenes/bird_or_enemy/yellow_cat_1.tscn" id="6_rjx8e"]
+[ext_resource type="PackedScene" uid="uid://cloucwpafhyjp" path="res://scenes/bird_or_enemy/black_cat_1.tscn" id="7_247ip"]
+[ext_resource type="PackedScene" uid="uid://8tcrhiyea8d3" path="res://scenes/bird_or_enemy/pink_bird_1.tscn" id="8_7q3gy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nq57p"]
+size = Vector2(1152, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b578h"]
+size = Vector2(1152, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qhfl"]
+size = Vector2(7, 592)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ry1uj"]
+size = Vector2(2, 592)
+
+[node name="ThirdScene" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(576.00006, 324)
+scale = Vector2(0.21942857, 0.18514284)
+texture = ExtResource("1_2xhf7")
+
+[node name="BlueBird" parent="." instance=ExtResource("2_nq57p")]
+position = Vector2(207, 459)
+
+[node name="ScreenBounds" type="Node2D" parent="."]
+
+[node name="TopWall" type="StaticBody2D" parent="ScreenBounds"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBounds/TopWall"]
+position = Vector2(576, 3.5)
+shape = SubResource("RectangleShape2D_nq57p")
+
+[node name="BottomWall" type="StaticBody2D" parent="ScreenBounds"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBounds/BottomWall"]
+position = Vector2(576, 623.5)
+shape = SubResource("RectangleShape2D_b578h")
+
+[node name="LeftWall" type="StaticBody2D" parent="ScreenBounds"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBounds/LeftWall"]
+position = Vector2(3.5, 303)
+shape = SubResource("RectangleShape2D_3qhfl")
+
+[node name="RightWall" type="StaticBody2D" parent="ScreenBounds"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBounds/RightWall"]
+position = Vector2(1151, 303)
+shape = SubResource("RectangleShape2D_ry1uj")
+
+[node name="green_bird_1" parent="." instance=ExtResource("3_b578h")]
+position = Vector2(38, 454)
+
+[node name="GreenBird2" parent="." instance=ExtResource("4_3qhfl")]
+position = Vector2(114, 452)
+
+[node name="WhiteCat1" parent="." instance=ExtResource("5_ry1uj")]
+position = Vector2(357, 456)
+
+[node name="YellowCat1" parent="." instance=ExtResource("6_rjx8e")]
+position = Vector2(439, 460)
+
+[node name="BlackCat1" parent="." instance=ExtResource("7_247ip")]
+position = Vector2(521, 460)
+
+[node name="PinkBird1" parent="." instance=ExtResource("8_7q3gy")]
+position = Vector2(281, 457)

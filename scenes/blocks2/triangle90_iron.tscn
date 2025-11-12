@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4ijlm5xcgsop"]
+
+[ext_resource type="Texture2D" uid="uid://8lbvf1oleg3q" path="res://assets/textures/razdel_blocks/triangle90_iron.png" id="1_ma0x3"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2ueme"]
+a = Vector2(-1, -68)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hgjqd"]
+a = Vector2(-36, -39)
+b = Vector2(38, 36)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yor51"]
+a = Vector2(-35, 37)
+b = Vector2(38, 37)
+
+[node name="Triangle90Iron" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ma0x3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-36, 28)
+shape = SubResource("SegmentShape2D_2ueme")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_hgjqd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_yor51")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

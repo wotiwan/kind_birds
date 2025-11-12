@@ -1,0 +1,144 @@
+[gd_scene load_steps=30 format=3 uid="uid://fk1f13us7iiv"]
+
+[ext_resource type="Texture2D" uid="uid://ux6fxf4g2bwo" path="res://assets/textures/41524.jpg" id="1_5f3n3"]
+[ext_resource type="PackedScene" uid="uid://bgk8pgwxijmnt" path="res://scenes/blocks2/big_square_ice.tscn" id="2_lasso"]
+[ext_resource type="PackedScene" uid="uid://cloucwpafhyjp" path="res://scenes/bird_or_enemy/black_cat_1.tscn" id="3_sq77g"]
+[ext_resource type="PackedScene" uid="uid://bx4coilva8stw" path="res://scenes/bird_or_enemy/blue_bird_1.tscn" id="4_u4dcc"]
+[ext_resource type="PackedScene" uid="uid://cd2b4yh7fb8oo" path="res://scenes/blocks2/big_square_iron.tscn" id="5_woign"]
+[ext_resource type="PackedScene" uid="uid://cnt4qljp6ypmc" path="res://scenes/blocks2/circle_ice.tscn" id="6_vwxe4"]
+[ext_resource type="PackedScene" uid="uid://og113ys0gm4a" path="res://scenes/blocks2/circle_iron.tscn" id="7_iicel"]
+[ext_resource type="PackedScene" uid="uid://dg3mnu7qvxk7x" path="res://scenes/blocks2/triangle_tree.tscn" id="8_mhwn8"]
+[ext_resource type="PackedScene" uid="uid://bntel3no501uu" path="res://scenes/blocks2/triangle_ice.tscn" id="9_07ils"]
+[ext_resource type="PackedScene" uid="uid://drvgw60g60kcy" path="res://scenes/blocks2/triangle_iron.tscn" id="10_06yd5"]
+[ext_resource type="PackedScene" uid="uid://cso3jrwqe0mim" path="res://scenes/blocks2/triangle90_tree.tscn" id="11_00ia2"]
+[ext_resource type="PackedScene" uid="uid://c4bl5k1spwwdq" path="res://scenes/blocks2/triangle90_ice.tscn" id="12_x4a4d"]
+[ext_resource type="PackedScene" uid="uid://d4ijlm5xcgsop" path="res://scenes/blocks2/triangle90_iron.tscn" id="13_p0is1"]
+[ext_resource type="PackedScene" uid="uid://btrslsysm6tmp" path="res://scenes/blocks2/rectangle_ice.tscn" id="14_it2p8"]
+[ext_resource type="PackedScene" uid="uid://dmm2ohu12sieh" path="res://scenes/blocks2/rectangle_iron.tscn" id="15_xmjo5"]
+[ext_resource type="PackedScene" uid="uid://cl1n1ybmsq255" path="res://scenes/blocks2/small_square_tree.tscn" id="16_tuhld"]
+[ext_resource type="PackedScene" uid="uid://byh6ce6hk6us8" path="res://scenes/blocks2/small_square_ice.tscn" id="17_y06nv"]
+[ext_resource type="PackedScene" uid="uid://caojta2uotxbc" path="res://scenes/blocks2/small_square_iron.tscn" id="18_6phhl"]
+[ext_resource type="PackedScene" uid="uid://dpt4orux25teu" path="res://scenes/blocks2/palka_tree.tscn" id="19_47o5e"]
+[ext_resource type="PackedScene" uid="uid://dfj41hlg3vlfj" path="res://scenes/blocks2/palka_ice.tscn" id="20_7xuqx"]
+[ext_resource type="PackedScene" uid="uid://cbx1jmmf1s4ee" path="res://scenes/blocks2/palka_iron.tscn" id="21_pcyyb"]
+[ext_resource type="PackedScene" uid="uid://dqn7wi3mtlh38" path="res://scenes/blocks2/small_palka_ice.tscn" id="22_02jv3"]
+[ext_resource type="PackedScene" uid="uid://dymuk3qdgdr2c" path="res://scenes/blocks2/small_palka_iron.tscn" id="23_x12sn"]
+[ext_resource type="PackedScene" uid="uid://f256akccot37" path="res://scenes/blocks2/small_palka_tree.tscn" id="24_g36pe"]
+[ext_resource type="PackedScene" uid="uid://nd6l0s6d03e0" path="res://scenes/blocks2/smile_face.tscn" id="25_02jv3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lasso"]
+size = Vector2(1152, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sq77g"]
+size = Vector2(1152, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4dcc"]
+size = Vector2(13, 581)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_woign"]
+size = Vector2(6, 581)
+
+[node name="SceneFor" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.21942858, 0.18514284)
+texture = ExtResource("1_5f3n3")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="topwall" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/topwall"]
+position = Vector2(576, 6)
+shape = SubResource("RectangleShape2D_lasso")
+
+[node name="bottomwall" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/bottomwall"]
+position = Vector2(576, 620.5)
+shape = SubResource("RectangleShape2D_sq77g")
+
+[node name="leftwall" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/leftwall"]
+position = Vector2(6.5, 302.5)
+shape = SubResource("RectangleShape2D_u4dcc")
+
+[node name="rightwall" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/rightwall"]
+position = Vector2(1149, 302.5)
+shape = SubResource("RectangleShape2D_woign")
+
+[node name="BlackCat1" parent="." instance=ExtResource("3_sq77g")]
+position = Vector2(77, 314)
+
+[node name="BlueBird" parent="." instance=ExtResource("4_u4dcc")]
+position = Vector2(73, 229)
+
+[node name="BigSquareIce" parent="." instance=ExtResource("2_lasso")]
+position = Vector2(470, 254)
+
+[node name="BigSquareIron" parent="." instance=ExtResource("5_woign")]
+position = Vector2(653, 256)
+
+[node name="CircleIce" parent="." instance=ExtResource("6_vwxe4")]
+position = Vector2(470, 474)
+
+[node name="CircleIron" parent="." instance=ExtResource("7_iicel")]
+position = Vector2(652, 477)
+
+[node name="TriangleTree" parent="." instance=ExtResource("8_mhwn8")]
+position = Vector2(299, 169)
+
+[node name="TriangleIce" parent="." instance=ExtResource("9_07ils")]
+position = Vector2(468, 162)
+
+[node name="TriangleIron" parent="." instance=ExtResource("10_06yd5")]
+position = Vector2(651, 165)
+
+[node name="Triangle90Tree" parent="." instance=ExtResource("11_00ia2")]
+position = Vector2(300, 257)
+
+[node name="Triangle90Ice" parent="." instance=ExtResource("12_x4a4d")]
+position = Vector2(473, 389)
+
+[node name="Triangle90Iron" parent="." instance=ExtResource("13_p0is1")]
+position = Vector2(656, 391)
+
+[node name="RectangleIce" parent="." instance=ExtResource("14_it2p8")]
+position = Vector2(470, 322)
+
+[node name="RectangleIron" parent="." instance=ExtResource("15_xmjo5")]
+position = Vector2(654, 322)
+
+[node name="SmallSquareTree" parent="." instance=ExtResource("16_tuhld")]
+position = Vector2(292, 331)
+
+[node name="SmallSquareIce" parent="." instance=ExtResource("17_y06nv")]
+position = Vector2(556, 476)
+
+[node name="SmallSquareIron" parent="." instance=ExtResource("18_6phhl")]
+position = Vector2(739, 465)
+
+[node name="PalkaTree" parent="." instance=ExtResource("19_47o5e")]
+position = Vector2(399, 225)
+
+[node name="PalkaIce" parent="." instance=ExtResource("20_7xuqx")]
+position = Vector2(577, 230)
+
+[node name="PalkaIron" parent="." instance=ExtResource("21_pcyyb")]
+position = Vector2(747, 226)
+
+[node name="SmallPalkaIce" parent="." instance=ExtResource("22_02jv3")]
+position = Vector2(547, 370)
+
+[node name="SmallPalkaIron" parent="." instance=ExtResource("23_x12sn")]
+position = Vector2(741, 379)
+
+[node name="SmallPalkaTree" parent="." instance=ExtResource("24_g36pe")]
+position = Vector2(379, 356)
+
+[node name="SmileFace" parent="." instance=ExtResource("25_02jv3")]
+position = Vector2(828, 311)

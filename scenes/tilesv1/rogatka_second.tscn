@@ -1,0 +1,140 @@
+[gd_scene load_steps=19 format=3 uid="uid://b1yxrrdfh4a2x"]
+
+[ext_resource type="Texture2D" uid="uid://3a32m35ov3ri" path="res://assets/textures/razdel_tiles_v1/rogatka_second.png" id="1_srvmp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bvhr3"]
+radius = 65.0
+height = 130.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jvu6j"]
+a = Vector2(-7.499999, -419.99997)
+b = Vector2(-7.499999, -559.99994)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_75wut"]
+a = Vector2(70, -170)
+b = Vector2(72.5, -279.99997)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dho50"]
+radius = 35.420105
+height = 115.07853
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_p5fte"]
+a = Vector2(-57.499996, -372.49997)
+b = Vector2(-92.49998, -134.99998)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_g1o75"]
+a = Vector2(72.49999, -137.49998)
+b = Vector2(17.499998, 39.999996)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_n2yi4"]
+b = Vector2(24.999998, 414.99994)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_r4x5w"]
+a = Vector2(-82.499985, -75.00001)
+b = Vector2(-124.999985, 44.999985)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_r3ypy"]
+a = Vector2(-162.49997, -137.5)
+b = Vector2(-172.49997, -30.000015)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qaw7x"]
+a = Vector2(-77.499985, -25)
+b = Vector2(-87.499985, -105)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2ik2x"]
+a = Vector2(17.499998, 39.999996)
+b = Vector2(-2.4999998, 157.49998)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_srvmp"]
+a = Vector2(-49.999996, -69.99999)
+b = Vector2(-67.49999, -44.999996)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bvhr3"]
+a = Vector2(-67.49999, -47.499996)
+b = Vector2(-67.49999, 107.49999)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dho50"]
+a = Vector2(-114.99999, 104.99999)
+b = Vector2(-67.49999, 104.99999)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_y8rjo"]
+a = Vector2(-99.99999, 169.99998)
+b = Vector2(-107.49999, 554.99994)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_uoop3"]
+a = Vector2(-99.99999, 169.99998)
+b = Vector2(-114.99999, 102.49999)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rn716"]
+radius = 27.477173
+height = 130.0
+
+[node name="RogatkaSecond" type="RigidBody2D"]
+scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_srvmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(52.499996, -397.49997)
+shape = SubResource("CapsuleShape2D_bvhr3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_jvu6j")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(32.499996, -264.99997)
+shape = SubResource("SegmentShape2D_75wut")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(47.499996, -540)
+rotation = 1.5044738
+shape = SubResource("CapsuleShape2D_dho50")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(164.99998, -4.7683716e-07)
+shape = SubResource("SegmentShape2D_p5fte")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_g1o75")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(9.536743e-07, 160)
+shape = SubResource("SegmentShape2D_n2yi4")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
+position = Vector2(74.99999, -114.99999)
+shape = SubResource("SegmentShape2D_r4x5w")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
+position = Vector2(164.99998, -159.99998)
+shape = SubResource("SegmentShape2D_r3ypy")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="."]
+position = Vector2(79.99999, -272.49997)
+shape = SubResource("SegmentShape2D_qaw7x")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_2ik2x")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_srvmp")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_bvhr3")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_dho50")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_y8rjo")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_uoop3")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="."]
+position = Vector2(-39.999996, 554.99994)
+rotation = 1.6144296
+shape = SubResource("CapsuleShape2D_rn716")

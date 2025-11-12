@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://f256akccot37"]
+
+[ext_resource type="Texture2D" uid="uid://gvo50rjncjr8" path="res://assets/textures/razdel_blocks/small_palka_tree.png" id="1_87knq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajq3b"]
+size = Vector2(81, 20)
+
+[node name="SmallPalkaTree" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_87knq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_ajq3b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

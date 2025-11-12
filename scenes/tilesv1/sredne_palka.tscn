@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4kkmgi0g7v6m"]
+
+[ext_resource type="Texture2D" uid="uid://dvsycobc0llyg" path="res://assets/textures/razdel_tiles_v1/sredne_palka_1.png" id="1_5eiwo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gtaq"]
+size = Vector2(200, 52)
+
+[node name="SrednePalka" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_5eiwo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0gtaq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dymuk3qdgdr2c"]
+
+[ext_resource type="Texture2D" uid="uid://0q2ibixe8ao6" path="res://assets/textures/razdel_blocks/small_palka_iron.png" id="1_q36vl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjw88"]
+size = Vector2(82, 20)
+
+[node name="SmallPalkaIron" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_q36vl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yjw88")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

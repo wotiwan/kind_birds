@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfj41hlg3vlfj"]
+
+[ext_resource type="Texture2D" uid="uid://cq16dxowvc6go" path="res://assets/textures/razdel_blocks/palka_ice.png" id="1_ag4dg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ao2cq"]
+size = Vector2(19, 204)
+
+[node name="PalkaIce" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ag4dg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9.5, 0)
+shape = SubResource("RectangleShape2D_ao2cq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

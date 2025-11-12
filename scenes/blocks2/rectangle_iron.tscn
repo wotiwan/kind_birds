@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmm2ohu12sieh"]
+
+[ext_resource type="Texture2D" uid="uid://djxwa66ljakax" path="res://assets/textures/razdel_blocks/rectangle_iron.png" id="1_1kumf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynb1p"]
+size = Vector2(82, 39)
+
+[node name="RectangleIron" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1kumf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ynb1p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

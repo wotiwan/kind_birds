@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg8fhlvmc6p3b"]
+
+[ext_resource type="Texture2D" uid="uid://d0csju0fvblc5" path="res://assets/textures/razdel_tiles_v1/small_palka_1.png" id="1_6lykx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10plq"]
+size = Vector2(152, 48)
+
+[node name="SmallPalka" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_6lykx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_10plq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

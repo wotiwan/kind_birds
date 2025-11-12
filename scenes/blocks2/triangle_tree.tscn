@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dg3mnu7qvxk7x"]
+
+[ext_resource type="Texture2D" uid="uid://716otpaxt3vg" path="res://assets/textures/razdel_blocks/triangle_tree.png" id="1_as7ie"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1malu"]
+a = Vector2(-2, -43)
+b = Vector2(-40, 31)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_liaj8"]
+a = Vector2(0, -43)
+b = Vector2(39, 32)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_f0bls"]
+b = Vector2(0, 12)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hp658"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ww4ig"]
+a = Vector2(-33, 15)
+b = Vector2(45, 15)
+
+[node name="TriangleTree" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_as7ie")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_1malu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_liaj8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-40, 30)
+shape = SubResource("SegmentShape2D_f0bls")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(40, 32)
+shape = SubResource("SegmentShape2D_hp658")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 26)
+shape = SubResource("SegmentShape2D_ww4ig")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

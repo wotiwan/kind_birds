@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://8tcrhiyea8d3"]
+
+[ext_resource type="Texture2D" uid="uid://b4scxowqr5vug" path="res://assets/textures/razdel_animals/pink_bird_1.png" id="1_lrhpp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_enc2y"]
+radius = 24.0
+height = 54.0
+
+[node name="PinkBird1" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8, -1)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("1_lrhpp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+shape = SubResource("CapsuleShape2D_enc2y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

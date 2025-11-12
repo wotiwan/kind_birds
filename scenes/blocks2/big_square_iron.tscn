@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd2b4yh7fb8oo"]
+
+[ext_resource type="Texture2D" uid="uid://d0rfn8jgds47s" path="res://assets/textures/razdel_blocks/big_square_iron.png" id="1_u1e1h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1e1h"]
+size = Vector2(80, 79)
+
+[node name="BigSquareIron" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_u1e1h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_u1e1h")

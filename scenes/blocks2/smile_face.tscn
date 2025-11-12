@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://nd6l0s6d03e0"]
+
+[ext_resource type="Texture2D" uid="uid://ds33uphsvtye3" path="res://assets/textures/razdel_blocks/smile_face.png" id="1_m3h0r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cmvup"]
+radius = 38.0
+
+[node name="SmileFace" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_m3h0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cmvup")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

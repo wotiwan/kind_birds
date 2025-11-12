@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0q4l1pi64s5j"]
+
+[ext_resource type="Texture2D" uid="uid://bv26saqx0j2ag" path="res://assets/textures/razdel_tiles_v1/big_square_1.png" id="1_l8aup"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_361y7"]
+size = Vector2(205, 202)
+
+[node name="BigSquare" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_l8aup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_361y7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

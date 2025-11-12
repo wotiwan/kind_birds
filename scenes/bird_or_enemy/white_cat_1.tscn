@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://xbty046w77kh"]
+
+[ext_resource type="Texture2D" uid="uid://81lcwo0iugg5" path="res://assets/textures/razdel_animals/white_cat_1.png" id="1_k2yr3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3smhn"]
+radius = 29.0
+height = 72.0
+
+[node name="WhiteCat1" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_k2yr3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_3smhn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

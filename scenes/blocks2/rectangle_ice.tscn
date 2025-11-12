@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://btrslsysm6tmp"]
+
+[ext_resource type="Texture2D" uid="uid://bnl333ii2ppty" path="res://assets/textures/razdel_blocks/rectangle_ice.png" id="1_nlnx2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5t2qr"]
+size = Vector2(81, 40)
+
+[node name="RectangleIce" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nlnx2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_5t2qr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

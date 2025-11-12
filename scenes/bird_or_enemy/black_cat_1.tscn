@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cloucwpafhyjp"]
+
+[ext_resource type="Texture2D" uid="uid://dhlqp6gbfgv14" path="res://assets/textures/razdel_animals/black_cat_1.png" id="1_lxanj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ogqbb"]
+radius = 29.0
+height = 70.0
+
+[node name="BlackCat1" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.9999998, -1.9999999)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_lxanj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 2)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_ogqbb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

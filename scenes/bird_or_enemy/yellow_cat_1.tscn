@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://pvt23ypo3ehq"]
+
+[ext_resource type="Texture2D" uid="uid://bgbuvxq5d88yk" path="res://assets/textures/razdel_animals/yellow_cat_1.png" id="1_3ictc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e47x6"]
+radius = 28.0
+height = 70.0
+
+[node name="YellowCat1" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_3ictc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_e47x6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

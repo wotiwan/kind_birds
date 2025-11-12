@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://byh6ce6hk6us8"]
+
+[ext_resource type="Texture2D" uid="uid://bl1qob5564mnx" path="res://assets/textures/razdel_blocks/small_square_ice.png" id="1_xl625"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sy1c"]
+size = Vector2(40, 39)
+
+[node name="SmallSquareIce" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xl625")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_0sy1c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

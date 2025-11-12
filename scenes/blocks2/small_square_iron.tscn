@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://caojta2uotxbc"]
+
+[ext_resource type="Texture2D" uid="uid://d0xuqnd7dedt3" path="res://assets/textures/razdel_blocks/small_square_iron.png" id="1_64eft"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55tma"]
+size = Vector2(40, 38)
+
+[node name="SmallSquareIron" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_64eft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_55tma")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

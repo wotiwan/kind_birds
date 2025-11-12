@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqb7mbpfu2ixm"]
+
+[ext_resource type="Texture2D" uid="uid://cvcuycj3lw702" path="res://assets/textures/45353.jpg" id="1_wr80a"]
+[ext_resource type="PackedScene" uid="uid://bx4coilva8stw" path="res://scenes/bird_or_enemy/blue_bird_1.tscn" id="2_wr80a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lxov"]
+size = Vector2(1139, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wr80a"]
+size = Vector2(1141, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70jnc"]
+size = Vector2(8, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_srtn1"]
+size = Vector2(5, 648)
+
+[node name="SecondScene" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.15880893, 0.2115573)
+texture = ExtResource("1_wr80a")
+
+[node name="BlueBird" parent="." instance=ExtResource("2_wr80a")]
+position = Vector2(227, 65)
+
+[node name="ScreenBounds" type="Node2D" parent="."]
+
+[node name="TopWall" type="StaticBody2D" parent="ScreenBounds"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBounds/TopWall"]
+position = Vector2(577.5, 3.5)
+shape = SubResource("RectangleShape2D_3lxov")
+
+[node name="BottomWall" type="StaticBody2D" parent="ScreenBounds"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBounds/BottomWall"]
+position = Vector2(576.5, 611.5)
+shape = SubResource("RectangleShape2D_wr80a")
+
+[node name="LeftWall" type="StaticBody2D" parent="ScreenBounds"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBounds/LeftWall"]
+position = Vector2(4, 324)
+shape = SubResource("RectangleShape2D_70jnc")
+
+[node name="RightWall" type="StaticBody2D" parent="ScreenBounds"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBounds/RightWall"]
+position = Vector2(1149.5, 324)
+shape = SubResource("RectangleShape2D_srtn1")
