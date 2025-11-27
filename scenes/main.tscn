@@ -63,6 +63,7 @@ freeze = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(298, 632)
+offset = Vector2(0, 200)
 limit_left = 0
 limit_top = 0
 limit_right = 2398

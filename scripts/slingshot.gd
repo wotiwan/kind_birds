@@ -19,13 +19,17 @@ var slingIdlePosition: Vector2 = Vector2(15, -158);
 @onready var leftLine = $leftLine;
 @onready var rightLine = $rightLine;
 
+## Птица в начале уровня, поменять при необходимости
+var startBird: String = "BlueBird"; 
+@onready var currentBird = get_tree().current_scene.get_node(startBird)
+
 func _ready() -> void:
 	slingState = SlingState.IDLE
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-		
+	print(currentBird)
 	match slingState:
 		SlingState.IDLE:
 			pass
@@ -36,7 +40,7 @@ func _process(delta: float) -> void:
 				## Ограничиваем растягивание резинки
 				if mousePosition.distance_to(hitBox.global_position) > PULL_RADIUS:
 					mousePosition = (mousePosition - hitBox.global_position).normalized() * PULL_RADIUS + hitBox.global_position
-				
+				currentBird.position = mousePosition
 				mousePosition = to_local(mousePosition)
 				print(mousePosition)
 				leftLine.points[0] = mousePosition
