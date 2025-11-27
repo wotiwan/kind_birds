@@ -59,15 +59,14 @@ shape = SubResource("RectangleShape2D_tefeu")
 [node name="BlueBird" parent="." instance=ExtResource("3_sugp2")]
 z_index = 1
 position = Vector2(352, 779)
-freeze = true
+sleeping = true
+
+[node name="Slingshot" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(327, 976)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(298, 632)
-offset = Vector2(0, 200)
+position = Vector2(298, 832)
 limit_left = 0
 limit_top = 0
 limit_right = 2398
 limit_bottom = 1200
-
-[node name="Slingshot" parent="." instance=ExtResource("4_jyhfs")]
-position = Vector2(327, 976)

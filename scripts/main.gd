@@ -7,15 +7,20 @@ var isCameraFixed: bool = true;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	var sling = get_node("Slingshot")
+	sling.connect("bird_thrown", _on_bird_thrown) 
+	sling.connect("bird_respawned", _on_bird_respawned)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# camera setting
 	if !isCameraFixed:
 		camera.set_position(player.get_position())
+		print(player.get_position())
 	
+func _on_bird_thrown() -> void:
+	isCameraFixed = false
 
-func throwBird() -> void:
+func _on_bird_respawned() -> void:
+	camera.set_position(300, 830)
 	isCameraFixed = true

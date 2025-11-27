@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx4coilva8stw"]
+[gd_scene load_steps=6 format=3 uid="uid://bx4coilva8stw"]
 
 [ext_resource type="Texture2D" uid="uid://dlub24w75bo4m" path="res://assets/textures/razdel_animals/blue_bird_1.png" id="1_3xytb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3xytb"]
+bounce = 0.4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_csb7b"]
 radius = 26.019224
@@ -14,6 +17,7 @@ _data = {
 }
 
 [node name="BlueBird" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_3xytb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-11, -5.0000005)
