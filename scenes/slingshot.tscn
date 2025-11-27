@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj0cpfs4ylas1"]
+
+[ext_resource type="Script" uid="uid://ba5deqs8byht3" path="res://scripts/slingshot.gd" id="1_3aosl"]
+[ext_resource type="Texture2D" uid="uid://cfxovh3ilemff" path="res://assets/textures/razdel_tiles_v1/rogatka_first.png" id="1_fipy2"]
+[ext_resource type="Texture2D" uid="uid://3a32m35ov3ri" path="res://assets/textures/razdel_tiles_v1/rogatka_second.png" id="2_3aosl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fipy2"]
+radius = 33.0
+height = 414.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3aosl"]
+radius = 89.106674
+
+[node name="Slingshot" type="Node2D"]
+script = ExtResource("1_3aosl")
+
+[node name="rightLine" type="Line2D" parent="."]
+points = PackedVector2Array(15, -158, 60, -186)
+
+[node name="leftLine" type="Line2D" parent="."]
+points = PackedVector2Array(15, -158, -32, -186)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+z_index = 2
+position = Vector2(25, -51)
+shape = SubResource("CapsuleShape2D_fipy2")
+
+[node name="RogatkaSecond" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(40, -48)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_3aosl")
+
+[node name="RogatkaFirst" type="Sprite2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(-15.999999, -45)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_fipy2")
+
+[node name="HitBox" type="Area2D" parent="StaticBody2D"]
+
+[node name="HitBoxArea" type="CollisionShape2D" parent="StaticBody2D/HitBox"]
+position = Vector2(-27, -187)
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_3aosl")
+
+[connection signal="input_event" from="StaticBody2D/HitBox" to="." method="_on_hit_box_input_event"]

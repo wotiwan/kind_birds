@@ -71,6 +71,7 @@ height = 130.0
 
 [node name="RogatkaSecond" type="RigidBody2D"]
 scale = Vector2(0.4, 0.4)
+gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_srvmp")
