@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 func _on_bird_thrown() -> void:
 	isCameraFixed = false
 
-func _on_bird_respawned() -> void:
-	camera.set_position(300, 830)
+func _on_bird_respawned(newBird: Node2D) -> void:
+	camera.set_position(Vector2(300, 830))
+	player = newBird
 	isCameraFixed = true

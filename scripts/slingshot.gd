@@ -1,7 +1,7 @@
 extends Node2D
 
 signal bird_thrown() # Для управления в скрипте сцены
-signal bird_respawned()
+signal bird_respawned(Node2D)
 
 enum SlingState {
 	IDLE, 
@@ -25,7 +25,10 @@ var slingIdlePosition: Vector2 = Vector2(15, -158);
 @onready var rightLine = $rightLine;
 
 ## Птица в начале уровня, поменять при необходимости
-var startBird: String = "BlueBird"; 
+var startBird: String = "BlueBird";
+## Следующие птицы загружаются на сцену динамически
+var secondBird: String = "green_bird_1";
+
 @onready var currentBird = get_tree().current_scene.get_node(startBird)
 
 func _ready() -> void:
@@ -41,7 +44,6 @@ func _process(delta: float) -> void:
 		SlingState.PULLING:
 			if Input.is_action_pressed("left_mouse_button_click"):
 				
-				# Выкл физику птички
 				var mousePosition = get_global_mouse_position()
 				## Ограничиваем растягивание резинки
 				if mousePosition.distance_to(hitBox.global_position) > PULL_RADIUS:
@@ -64,13 +66,28 @@ func _process(delta: float) -> void:
 			bird_thrown.emit()
 			leftLine.points[0] = slingIdlePosition
 			rightLine.points[0] = slingIdlePosition
-			slingState = SlingState.IDLE
 		SlingState.RESET:
-			bird_respawned.emit()
-			pass
+			slingState = SlingState.IDLE
+			# Убираем текущую птицу
+			currentBird.set_freeze_enabled(1)
+			currentBird.get_child(1).disabled = true # Обращаем к колижен шейп по индексу
+			currentBird.visible = false
+			await get_tree().create_timer(2.0).timeout
+			# Создаём новую птицу и перемещаем на позицию рогатки
+			currentBird = get_tree().current_scene.get_node(secondBird)
+			currentBird.visible = true
+			currentBird.position = Vector2(352, 779)
+			# Передаём в main инфо о том, что новая птица создана
+			bird_respawned.emit(currentBird)
 	
 
 func _on_hit_box_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("left_mouse_button_click"):
+		print("LKM!")
 		slingState = SlingState.PULLING
-	
+
+func _on_blue_bird_body_entered(body: Node) -> void:
+	slingState = SlingState.RESET
+
+func _on_green_bird_1_body_entered(body: Node) -> void:
+	slingState = SlingState.RESET

@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bksq1mht5nxuk"]
+[gd_scene load_steps=11 format=3 uid="uid://bksq1mht5nxuk"]
 
 [ext_resource type="Script" uid="uid://cwuf5o1a1oejv" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://ddwpla4x7cvoi" path="res://assets/textures/8817533.jpg" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bwn0wsjearxo5" path="res://scenes/bird_or_enemy/green_bird_1.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bx4coilva8stw" path="res://scenes/bird_or_enemy/blue_bird_1.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cj0cpfs4ylas1" path="res://scenes/slingshot.tscn" id="4_jyhfs"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tbgi4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
 size = Vector2(2400, 21)
@@ -19,6 +22,9 @@ size = Vector2(16.5, 1109.5)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_o5qli")
+
+[node name="green_bird_1" parent="." instance=ExtResource("2_tbgi4")]
+physics_material_override = SubResource("PhysicsMaterial_tbgi4")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(1200, 800)
@@ -60,6 +66,8 @@ shape = SubResource("RectangleShape2D_tefeu")
 z_index = 1
 position = Vector2(352, 779)
 sleeping = true
+contact_monitor = true
+max_contacts_reported = 5
 
 [node name="Slingshot" parent="." instance=ExtResource("4_jyhfs")]
 position = Vector2(327, 976)
@@ -70,3 +78,6 @@ limit_left = 0
 limit_top = 0
 limit_right = 2398
 limit_bottom = 1200
+
+[connection signal="body_entered" from="green_bird_1" to="Slingshot" method="_on_green_bird_1_body_entered"]
+[connection signal="body_entered" from="BlueBird" to="Slingshot" method="_on_blue_bird_body_entered"]
