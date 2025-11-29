@@ -16,9 +16,11 @@ script = ExtResource("1_3aosl")
 
 [node name="rightLine" type="Line2D" parent="."]
 points = PackedVector2Array(15, -158, 60, -186)
+default_color = Color(0.34549522, 0.19202104, 9.62615e-08, 1)
 
 [node name="leftLine" type="Line2D" parent="."]
 points = PackedVector2Array(15, -158, -32, -186)
+default_color = Color(0.34549522, 0.19202104, 9.62615e-08, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
