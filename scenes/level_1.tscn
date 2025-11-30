@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://bewowws48bp10"]
+
+[ext_resource type="PackedScene" uid="uid://dqn7wi3mtlh38" path="res://scenes/blocks2/small_palka_ice.tscn" id="1_pa8r4"]
+[ext_resource type="PackedScene" uid="uid://f256akccot37" path="res://scenes/blocks2/small_palka_tree.tscn" id="2_15mv3"]
+[ext_resource type="PackedScene" uid="uid://dg3mnu7qvxk7x" path="res://scenes/blocks2/triangle_tree.tscn" id="3_e3sih"]
+[ext_resource type="PackedScene" uid="uid://dpt4orux25teu" path="res://scenes/blocks2/palka_tree.tscn" id="4_2y5yt"]
+[ext_resource type="PackedScene" uid="uid://xbty046w77kh" path="res://scenes/bird_or_enemy/white_cat_1.tscn" id="5_2os1m"]
+[ext_resource type="PackedScene" uid="uid://cso3jrwqe0mim" path="res://scenes/blocks2/triangle90_tree.tscn" id="6_go7sj"]
+[ext_resource type="PackedScene" uid="uid://cl1n1ybmsq255" path="res://scenes/blocks2/small_square_tree.tscn" id="7_7gny6"]
+
+[node name="Level 1" type="Node2D"]
+
+[node name="SmallPalkaIce2" parent="." instance=ExtResource("1_pa8r4")]
+position = Vector2(30, 49)
+rotation = 1.5707964
+
+[node name="SmallPalkaIce" parent="." instance=ExtResource("1_pa8r4")]
+position = Vector2(-15, 49)
+rotation = 1.5707964
+
+[node name="SmallPalkaTree6" parent="." instance=ExtResource("2_15mv3")]
+position = Vector2(8, -2)
+
+[node name="SmallPalkaTree5" parent="." instance=ExtResource("2_15mv3")]
+position = Vector2(7, 100)
+
+[node name="TriangleTree" parent="." instance=ExtResource("3_e3sih")]
+position = Vector2(7, -255)
+
+[node name="PalkaTree4" parent="." instance=ExtResource("4_2y5yt")]
+position = Vector2(5, -194)
+rotation = 1.5707964
+
+[node name="SmallPalkaTree4" parent="." instance=ExtResource("2_15mv3")]
+position = Vector2(55, -153)
+rotation = 1.5707964
+
+[node name="SmallPalkaTree3" parent="." instance=ExtResource("2_15mv3")]
+position = Vector2(-42, -153)
+rotation = 1.5707964
+
+[node name="WhiteCat1" parent="." instance=ExtResource("5_2os1m")]
+position = Vector2(6, -146)
+
+[node name="PalkaTree3" parent="." instance=ExtResource("4_2y5yt")]
+position = Vector2(6, -94)
+rotation = 1.5707964
+
+[node name="Triangle90Tree2" parent="." instance=ExtResource("6_go7sj")]
+position = Vector2(-118, 128)
+rotation = -1.5707964
+
+[node name="PalkaTree2" parent="." instance=ExtResource("4_2y5yt")]
+position = Vector2(85, 7)
+
+[node name="SmallSquareTree4" parent="." instance=ExtResource("7_7gny6")]
+position = Vector2(-56, 148)
+
+[node name="SmallSquareTree3" parent="." instance=ExtResource("7_7gny6")]
+position = Vector2(-15, 148)
+
+[node name="SmallSquareTree2" parent="." instance=ExtResource("7_7gny6")]
+position = Vector2(26, 148)
+
+[node name="SmallSquareTree" parent="." instance=ExtResource("7_7gny6")]
+position = Vector2(67, 148)
+
+[node name="Triangle90Tree" parent="." instance=ExtResource("6_go7sj")]
+position = Vector2(128, 128)
+
+[node name="SmallPalkaTree2" parent="." instance=ExtResource("2_15mv3")]
+position = Vector2(47, 119)
+
+[node name="SmallPalkaTree" parent="." instance=ExtResource("2_15mv3")]
+position = Vector2(-35, 119)
+
+[node name="PalkaTree" parent="." instance=ExtResource("4_2y5yt")]
+position = Vector2(-55, 7)

@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://qdmnbi7kjgmj"]
+
+[ext_resource type="PackedScene" uid="uid://d0rciadugce1d" path="res://scenes/tilesv1/big_palka.tscn" id="1_ne2mo"]
+[ext_resource type="PackedScene" uid="uid://b38q6ujmrou8u" path="res://scenes/tilesv1/sredne_square.tscn" id="2_6cvei"]
+[ext_resource type="PackedScene" uid="uid://cvtcj3uqe7uhm" path="res://scenes/tilesv1/small_square.tscn" id="3_que50"]
+[ext_resource type="PackedScene" uid="uid://dymuk3qdgdr2c" path="res://scenes/blocks2/small_palka_iron.tscn" id="4_hey2k"]
+[ext_resource type="PackedScene" uid="uid://f256akccot37" path="res://scenes/blocks2/small_palka_tree.tscn" id="5_172wr"]
+[ext_resource type="PackedScene" uid="uid://cloucwpafhyjp" path="res://scenes/bird_or_enemy/black_cat_1.tscn" id="6_g2hoc"]
+[ext_resource type="PackedScene" uid="uid://pvt23ypo3ehq" path="res://scenes/bird_or_enemy/yellow_cat_1.tscn" id="7_fldb1"]
+[ext_resource type="PackedScene" uid="uid://xbty046w77kh" path="res://scenes/bird_or_enemy/white_cat_1.tscn" id="8_guvtl"]
+
+[node name="Level 2" type="Node2D"]
+
+[node name="BigPalka" parent="." instance=ExtResource("1_ne2mo")]
+position = Vector2(6, 75)
+
+[node name="SredneSquare" parent="." instance=ExtResource("2_6cvei")]
+position = Vector2(79, -2)
+
+[node name="SmallSqure" parent="." instance=ExtResource("3_que50")]
+position = Vector2(1, 23)
+
+[node name="SmallPalkaIron" parent="." instance=ExtResource("4_hey2k")]
+position = Vector2(-102, 7)
+rotation = 1.5707964
+
+[node name="SmallPalkaIron2" parent="." instance=ExtResource("4_hey2k")]
+position = Vector2(-8, -43)
+rotation = 1.5707964
+
+[node name="SmallPalkaIron3" parent="." instance=ExtResource("4_hey2k")]
+position = Vector2(84, -93)
+rotation = 1.5707964
+
+[node name="SmallPalkaTree" parent="." instance=ExtResource("5_172wr")]
+position = Vector2(-101, -43)
+
+[node name="SmallPalkaTree2" parent="." instance=ExtResource("5_172wr")]
+position = Vector2(-7, -94)
+
+[node name="SmallPalkaTree3" parent="." instance=ExtResource("5_172wr")]
+position = Vector2(81, -144)
+
+[node name="BlackCat1" parent="." instance=ExtResource("6_g2hoc")]
+position = Vector2(-107, -84)
+
+[node name="YellowCat1" parent="." instance=ExtResource("7_fldb1")]
+position = Vector2(83, -191)
+
+[node name="WhiteCat1" parent="." instance=ExtResource("8_guvtl")]
+position = Vector2(-9, -137)
