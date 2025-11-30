@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://opiq73dfgrqr"]
+
+[ext_resource type="PackedScene" uid="uid://dmm2ohu12sieh" path="res://scenes/blocks2/rectangle_iron.tscn" id="1_fsnos"]
+[ext_resource type="PackedScene" uid="uid://c0q4l1pi64s5j" path="res://scenes/tilesv1/big_square.tscn" id="2_mxx4w"]
+[ext_resource type="PackedScene" uid="uid://cbx1jmmf1s4ee" path="res://scenes/blocks2/palka_iron.tscn" id="3_vvoq0"]
+[ext_resource type="PackedScene" uid="uid://pvt23ypo3ehq" path="res://scenes/bird_or_enemy/yellow_cat_1.tscn" id="4_tqnj0"]
+[ext_resource type="PackedScene" uid="uid://dqn7wi3mtlh38" path="res://scenes/blocks2/small_palka_ice.tscn" id="5_dwyms"]
+[ext_resource type="PackedScene" uid="uid://dfj41hlg3vlfj" path="res://scenes/blocks2/palka_ice.tscn" id="6_6xwso"]
+[ext_resource type="PackedScene" uid="uid://cl1n1ybmsq255" path="res://scenes/blocks2/small_square_tree.tscn" id="7_5ke18"]
+
+[node name="Level 5" type="Node2D"]
+
+[node name="RectangleIron" parent="." instance=ExtResource("1_fsnos")]
+position = Vector2(-44, -20)
+
+[node name="BigSquare" parent="." instance=ExtResource("2_mxx4w")]
+position = Vector2(0, 100)
+
+[node name="RectangleIron2" parent="." instance=ExtResource("1_fsnos")]
+position = Vector2(48, -21)
+
+[node name="PalkaIron" parent="." instance=ExtResource("3_vvoq0")]
+position = Vector2(4, -41)
+rotation = 1.5707964
+
+[node name="YellowCat1" parent="." instance=ExtResource("4_tqnj0")]
+position = Vector2(4, -97)
+
+[node name="SmallPalkaIce" parent="." instance=ExtResource("5_dwyms")]
+position = Vector2(-58, -101)
+rotation = 1.5707964
+
+[node name="SmallPalkaIce2" parent="." instance=ExtResource("5_dwyms")]
+position = Vector2(67, -101)
+rotation = 1.5707964
+
+[node name="PalkaIce" parent="." instance=ExtResource("6_6xwso")]
+position = Vector2(6, -142)
+rotation = 1.5707964
+
+[node name="SmallSquareTree" parent="." instance=ExtResource("7_5ke18")]
+position = Vector2(9, -181)
+mass = 0.5
+
+[node name="SmallSquareTree2" parent="." instance=ExtResource("7_5ke18")]
+position = Vector2(-59, -181)
+mass = 0.5
+
+[node name="SmallSquareTree3" parent="." instance=ExtResource("7_5ke18")]
+position = Vector2(74, -181)
+mass = 0.5

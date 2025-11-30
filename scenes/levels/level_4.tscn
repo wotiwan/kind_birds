@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv5gkmoqbbwex"]
+
+[ext_resource type="PackedScene" uid="uid://cso3jrwqe0mim" path="res://scenes/blocks2/triangle90_tree.tscn" id="1_wom6i"]
+[ext_resource type="PackedScene" uid="uid://cg8fhlvmc6p3b" path="res://scenes/tilesv1/small_palka.tscn" id="2_ycko3"]
+[ext_resource type="PackedScene" uid="uid://c3rwag41pfom1" path="res://scenes/tilesv1/big_circle.tscn" id="3_x7blo"]
+[ext_resource type="PackedScene" uid="uid://xbty046w77kh" path="res://scenes/bird_or_enemy/white_cat_1.tscn" id="4_qsmat"]
+[ext_resource type="PackedScene" uid="uid://f256akccot37" path="res://scenes/blocks2/small_palka_tree.tscn" id="5_yk4f3"]
+
+[node name="Level 4" type="Node2D"]
+
+[node name="Triangle90Tree" parent="." instance=ExtResource("1_wom6i")]
+position = Vector2(-51, 0)
+
+[node name="SmallPalka" parent="." instance=ExtResource("2_ycko3")]
+position = Vector2(-167, 15)
+
+[node name="SmallPalka2" parent="." instance=ExtResource("2_ycko3")]
+position = Vector2(-167, -33)
+
+[node name="BigCircle" parent="." instance=ExtResource("3_x7blo")]
+position = Vector2(-168, -110)
+
+[node name="WhiteCat1" parent="." instance=ExtResource("4_qsmat")]
+position = Vector2(135, 8)
+
+[node name="SmallPalkaTree" parent="." instance=ExtResource("5_yk4f3")]
+position = Vector2(88, 0)
+rotation = 1.5707964
+
+[node name="SmallPalkaTree2" parent="." instance=ExtResource("5_yk4f3")]
+position = Vector2(182, 0)
+rotation = 1.5707964
+
+[node name="Triangle90Tree2" parent="." instance=ExtResource("1_wom6i")]
+position = Vector2(136, -43.99997)
+rotation = 2.3561945
+scale = Vector2(0.99999994, 0.99999994)

@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqb7mbpfu2ixm"]
+[gd_scene load_steps=12 format=3 uid="uid://cqb7mbpfu2ixm"]
 
 [ext_resource type="Texture2D" uid="uid://cvcuycj3lw702" path="res://assets/textures/45353.jpg" id="1_wr80a"]
 [ext_resource type="PackedScene" uid="uid://bx4coilva8stw" path="res://scenes/bird_or_enemy/blue_bird_1.tscn" id="2_wr80a"]
 [ext_resource type="PackedScene" uid="uid://cj0cpfs4ylas1" path="res://scenes/slingshot.tscn" id="3_70jnc"]
-[ext_resource type="PackedScene" uid="uid://qdmnbi7kjgmj" path="res://scenes/level_2.tscn" id="4_srtn1"]
+[ext_resource type="PackedScene" uid="uid://qdmnbi7kjgmj" path="res://scenes/levels/level_2.tscn" id="4_srtn1"]
+[ext_resource type="PackedScene" uid="uid://db5vml3mophj" path="res://scenes/levels/level_3.tscn" id="5_3lxov"]
+[ext_resource type="PackedScene" uid="uid://cv5gkmoqbbwex" path="res://scenes/levels/level_4.tscn" id="6_d71sn"]
+[ext_resource type="PackedScene" uid="uid://opiq73dfgrqr" path="res://scenes/levels/level_5.tscn" id="7_kvnfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3lxov"]
 size = Vector2(1139, 7)
@@ -32,7 +35,7 @@ position = Vector2(422, 246)
 position = Vector2(397, 442)
 
 [node name="Level 2" parent="." instance=ExtResource("4_srtn1")]
-position = Vector2(1018, 474)
+position = Vector2(1377, 233)
 
 [node name="ScreenBounds" type="Node2D" parent="."]
 
@@ -59,3 +62,12 @@ shape = SubResource("RectangleShape2D_70jnc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBounds/RightWall"]
 position = Vector2(1149.5, 324)
 shape = SubResource("RectangleShape2D_srtn1")
+
+[node name="Level 3" parent="." instance=ExtResource("5_3lxov")]
+position = Vector2(1457, 486)
+
+[node name="Level 4" parent="." instance=ExtResource("6_d71sn")]
+position = Vector2(1819, 270)
+
+[node name="Level 5" parent="." instance=ExtResource("7_kvnfp")]
+position = Vector2(870, 367)
