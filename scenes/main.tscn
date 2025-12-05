@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bksq1mht5nxuk"]
+[gd_scene load_steps=13 format=3 uid="uid://bksq1mht5nxuk"]
 
 [ext_resource type="Script" uid="uid://cwuf5o1a1oejv" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://ddwpla4x7cvoi" path="res://assets/textures/8817533.jpg" id="2_0wfyh"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bx4coilva8stw" path="res://scenes/bird_or_enemy/blue_bird_1.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cj0cpfs4ylas1" path="res://scenes/slingshot.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bewowws48bp10" path="res://scenes/levels/level_1.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://yn86viinomhs" path="res://scenes/UI/pause_menu.tscn" id="7_o6xl0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tbgi4"]
 
@@ -37,6 +38,8 @@ position = Vector2(327, 976)
 
 [node name="BlueBird" parent="." instance=ExtResource("3_sugp2")]
 position = Vector2(346, 798)
+contact_monitor = true
+max_contacts_reported = 5
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(298, 832)
@@ -77,4 +80,9 @@ position = Vector2(2405, 90)
 position = Vector2(8.5, 466.5)
 shape = SubResource("RectangleShape2D_eb6dy")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause_menu" parent="CanvasLayer" instance=ExtResource("7_o6xl0")]
+
 [connection signal="body_entered" from="green_bird_1" to="Slingshot" method="_on_green_bird_1_body_entered"]
+[connection signal="body_entered" from="BlueBird" to="Slingshot" method="_on_blue_bird_body_entered"]
