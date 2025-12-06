@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7h8fe2awq2xd"]
+[gd_scene load_steps=16 format=3 uid="uid://b7h8fe2awq2xd"]
 
 [ext_resource type="Texture2D" uid="uid://ux6fxf4g2bwo" path="res://assets/textures/41524.jpg" id="1_2xhf7"]
 [ext_resource type="PackedScene" uid="uid://bx4coilva8stw" path="res://scenes/bird_or_enemy/blue_bird_1.tscn" id="2_nq57p"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://pvt23ypo3ehq" path="res://scenes/bird_or_enemy/yellow_cat_1.tscn" id="6_rjx8e"]
 [ext_resource type="PackedScene" uid="uid://cloucwpafhyjp" path="res://scenes/bird_or_enemy/black_cat_1.tscn" id="7_247ip"]
 [ext_resource type="PackedScene" uid="uid://8tcrhiyea8d3" path="res://scenes/bird_or_enemy/pink_bird_1.tscn" id="8_7q3gy"]
+[ext_resource type="PackedScene" uid="uid://yn86viinomhs" path="res://scenes/UI/pause_menu.tscn" id="9_mniyy"]
+[ext_resource type="PackedScene" uid="uid://dkxsgkqll0qpe" path="res://scenes/UI/win_menu.tscn" id="10_b6bkb"]
+[ext_resource type="PackedScene" uid="uid://b38aobkagdcfr" path="res://scenes/UI/lose_menu.tscn" id="11_5o0nr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nq57p"]
 size = Vector2(1152, 7)
@@ -74,3 +77,14 @@ position = Vector2(521, 460)
 
 [node name="PinkBird1" parent="." instance=ExtResource("8_7q3gy")]
 position = Vector2(281, 457)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause_menu" parent="CanvasLayer" instance=ExtResource("9_mniyy")]
+visible = false
+
+[node name="WinMenu" parent="CanvasLayer" instance=ExtResource("10_b6bkb")]
+visible = false
+
+[node name="LoseMenu" parent="CanvasLayer" instance=ExtResource("11_5o0nr")]
+visible = false

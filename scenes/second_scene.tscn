@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cqb7mbpfu2ixm"]
+[gd_scene load_steps=15 format=3 uid="uid://cqb7mbpfu2ixm"]
 
 [ext_resource type="Texture2D" uid="uid://cvcuycj3lw702" path="res://assets/textures/45353.jpg" id="1_wr80a"]
 [ext_resource type="PackedScene" uid="uid://bx4coilva8stw" path="res://scenes/bird_or_enemy/blue_bird_1.tscn" id="2_wr80a"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://db5vml3mophj" path="res://scenes/levels/level_3.tscn" id="5_3lxov"]
 [ext_resource type="PackedScene" uid="uid://cv5gkmoqbbwex" path="res://scenes/levels/level_4.tscn" id="6_d71sn"]
 [ext_resource type="PackedScene" uid="uid://opiq73dfgrqr" path="res://scenes/levels/level_5.tscn" id="7_kvnfp"]
+[ext_resource type="PackedScene" uid="uid://yn86viinomhs" path="res://scenes/UI/pause_menu.tscn" id="8_2egt0"]
+[ext_resource type="PackedScene" uid="uid://dkxsgkqll0qpe" path="res://scenes/UI/win_menu.tscn" id="9_afim2"]
+[ext_resource type="PackedScene" uid="uid://b38aobkagdcfr" path="res://scenes/UI/lose_menu.tscn" id="10_k05yt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3lxov"]
 size = Vector2(1139, 7)
@@ -71,3 +74,14 @@ position = Vector2(1819, 270)
 
 [node name="Level 5" parent="." instance=ExtResource("7_kvnfp")]
 position = Vector2(870, 367)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause_menu" parent="CanvasLayer" instance=ExtResource("8_2egt0")]
+visible = false
+
+[node name="WinMenu" parent="CanvasLayer" instance=ExtResource("9_afim2")]
+visible = false
+
+[node name="LoseMenu" parent="CanvasLayer" instance=ExtResource("10_k05yt")]
+visible = false

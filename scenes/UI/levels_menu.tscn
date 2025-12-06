@@ -1,0 +1,178 @@
+[gd_scene load_steps=9 format=3 uid="uid://bc5dqe777isf"]
+
+[ext_resource type="Texture2D" uid="uid://twkkdu44mi7d" path="res://assets/textures/8787763.jpg" id="1_4i2q8"]
+[ext_resource type="Script" uid="uid://b6wy4vwlp1nsr" path="res://scripts/levels_menu.gd" id="1_4kgj3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4kgj3"]
+texture = ExtResource("1_4i2q8")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvus1"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 5
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mcv6"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 5
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n48c6"]
+bg_color = Color(0.8862616, 0.88626146, 0.8862615, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 5
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5lysr"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 5
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7brx7"]
+
+[node name="LevelsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4kgj3")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_4kgj3")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -93.0
+offset_right = 300.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="FirstLvl_Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_dvus1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6mcv6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n48c6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5lysr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7brx7")
+text = "1"
+
+[node name="SecondLvl_Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_dvus1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6mcv6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n48c6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5lysr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7brx7")
+text = "2"
+
+[node name="ThirdLvl_Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_dvus1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6mcv6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n48c6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5lysr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7brx7")
+text = "3"
+
+[node name="Back_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 727.0
+offset_top = 491.0
+offset_right = 876.0
+offset_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_dvus1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6mcv6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n48c6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5lysr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7brx7")
+text = "Back"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -275.0
+offset_right = 140.0
+offset_bottom = -138.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Levels"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="VBoxContainer/FirstLvl_Button" to="." method="_on_first_lvl_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/SecondLvl_Button" to="." method="_on_second_lvl_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/ThirdLvl_Button" to="." method="_on_third_lvl_button_button_down"]
+[connection signal="button_down" from="Back_Button" to="." method="_on_back_button_button_down"]

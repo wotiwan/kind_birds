@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="kind_birds"
-run/main_scene="uid://bksq1mht5nxuk"
+run/main_scene="uid://clrg6f5nmvq0t"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

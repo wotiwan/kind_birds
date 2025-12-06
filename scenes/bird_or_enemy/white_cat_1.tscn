@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://xbty046w77kh"]
+[gd_scene load_steps=4 format=3 uid="uid://xbty046w77kh"]
 
+[ext_resource type="Script" uid="uid://4x3kku8yq6s" path="res://scripts/white_cat_1.gd" id="1_3smhn"]
 [ext_resource type="Texture2D" uid="uid://81lcwo0iugg5" path="res://assets/textures/razdel_animals/white_cat_1.png" id="1_k2yr3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3smhn"]
@@ -7,6 +8,9 @@ radius = 29.0
 height = 72.0
 
 [node name="WhiteCat1" type="RigidBody2D"]
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_3smhn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
@@ -18,3 +22,5 @@ rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_3smhn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
