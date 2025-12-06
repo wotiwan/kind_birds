@@ -86,8 +86,11 @@ func _on_hit_box_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		print("LKM!")
 		slingState = SlingState.PULLING
 
-func _on_blue_bird_body_entered(body: Node) -> void:
-	slingState = SlingState.RESET
+
 
 func _on_green_bird_1_body_entered(body: Node) -> void:
+	slingState = SlingState.RESET
+
+
+func _on_blue_bird_body_entered(body: Node) -> void:
 	slingState = SlingState.RESET

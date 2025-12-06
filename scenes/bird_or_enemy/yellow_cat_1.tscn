@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://pvt23ypo3ehq"]
+[gd_scene load_steps=4 format=3 uid="uid://pvt23ypo3ehq"]
 
 [ext_resource type="Texture2D" uid="uid://bgbuvxq5d88yk" path="res://assets/textures/razdel_animals/yellow_cat_1.png" id="1_3ictc"]
+[ext_resource type="Script" uid="uid://b0a7a63yqtufo" path="res://scripts/yellow_cat_1.gd" id="1_e47x6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e47x6"]
 radius = 28.0
 height = 70.0
 
 [node name="YellowCat1" type="RigidBody2D"]
+script = ExtResource("1_e47x6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
@@ -18,3 +20,5 @@ rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_e47x6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
