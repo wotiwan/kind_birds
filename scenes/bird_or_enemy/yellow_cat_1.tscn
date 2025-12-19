@@ -8,6 +8,8 @@ radius = 28.0
 height = 70.0
 
 [node name="YellowCat1" type="RigidBody2D"]
+contact_monitor = true
+max_contacts_reported = 10
 script = ExtResource("1_e47x6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

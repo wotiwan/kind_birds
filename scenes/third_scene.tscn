@@ -1,82 +1,194 @@
-[gd_scene load_steps=16 format=3 uid="uid://b7h8fe2awq2xd"]
+[gd_scene load_steps=24 format=3 uid="uid://b7h8fe2awq2xd"]
 
 [ext_resource type="Texture2D" uid="uid://ux6fxf4g2bwo" path="res://assets/textures/41524.jpg" id="1_2xhf7"]
+[ext_resource type="Script" uid="uid://dj8laln2nkffj" path="res://scripts/main_scene_three.gd" id="1_71jtq"]
+[ext_resource type="PackedScene" uid="uid://cj0cpfs4ylas1" path="res://scenes/slingshot.tscn" id="2_5o0nr"]
+[ext_resource type="PackedScene" uid="uid://dymuk3qdgdr2c" path="res://scenes/blocks2/small_palka_iron.tscn" id="2_mniyy"]
 [ext_resource type="PackedScene" uid="uid://bx4coilva8stw" path="res://scenes/bird_or_enemy/blue_bird_1.tscn" id="2_nq57p"]
+[ext_resource type="PackedScene" uid="uid://d0rciadugce1d" path="res://scenes/tilesv1/big_palka.tscn" id="3_b6bkb"]
 [ext_resource type="PackedScene" uid="uid://bwn0wsjearxo5" path="res://scenes/bird_or_enemy/green_bird_1.tscn" id="3_b578h"]
 [ext_resource type="PackedScene" uid="uid://c7yfsyym13dym" path="res://scenes/bird_or_enemy/yellow_bird_1.tscn" id="4_3qhfl"]
+[ext_resource type="Script" uid="uid://36v4cmlq8cwe" path="res://scripts/slingshot_scene_three.gd" id="4_jbaw6"]
+[ext_resource type="PackedScene" uid="uid://f256akccot37" path="res://scenes/blocks2/small_palka_tree.tscn" id="5_5o0nr"]
 [ext_resource type="PackedScene" uid="uid://xbty046w77kh" path="res://scenes/bird_or_enemy/white_cat_1.tscn" id="5_ry1uj"]
-[ext_resource type="PackedScene" uid="uid://pvt23ypo3ehq" path="res://scenes/bird_or_enemy/yellow_cat_1.tscn" id="6_rjx8e"]
+[ext_resource type="PackedScene" uid="uid://dfj41hlg3vlfj" path="res://scenes/blocks2/palka_ice.tscn" id="6_71jtq"]
 [ext_resource type="PackedScene" uid="uid://cloucwpafhyjp" path="res://scenes/bird_or_enemy/black_cat_1.tscn" id="7_247ip"]
-[ext_resource type="PackedScene" uid="uid://8tcrhiyea8d3" path="res://scenes/bird_or_enemy/pink_bird_1.tscn" id="8_7q3gy"]
+[ext_resource type="PackedScene" uid="uid://dqn7wi3mtlh38" path="res://scenes/blocks2/small_palka_ice.tscn" id="7_jbaw6"]
 [ext_resource type="PackedScene" uid="uid://yn86viinomhs" path="res://scenes/UI/pause_menu.tscn" id="9_mniyy"]
 [ext_resource type="PackedScene" uid="uid://dkxsgkqll0qpe" path="res://scenes/UI/win_menu.tscn" id="10_b6bkb"]
 [ext_resource type="PackedScene" uid="uid://b38aobkagdcfr" path="res://scenes/UI/lose_menu.tscn" id="11_5o0nr"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2ojh4"]
+bounce = 0.4
+
+[sub_resource type="GDScript" id="GDScript_k4lg4"]
+script/source = "extends RigidBody2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nq57p"]
-size = Vector2(1152, 7)
+size = Vector2(2312, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b578h"]
-size = Vector2(1152, 49)
+size = Vector2(2318, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qhfl"]
-size = Vector2(7, 592)
+size = Vector2(10, 645)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ry1uj"]
-size = Vector2(2, 592)
+size = Vector2(17, 592)
 
 [node name="ThirdScene" type="Node2D"]
+script = ExtResource("1_71jtq")
+
+[node name="background2" type="Sprite2D" parent="."]
+position = Vector2(1735, 356)
+scale = Vector2(0.219, 0.203)
+texture = ExtResource("1_2xhf7")
+region_enabled = true
+region_rect = Rect2(-7.836426, -21.475647, 5287.3403, 3532.1167)
 
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(576.00006, 324)
-scale = Vector2(0.21942857, 0.18514284)
+position = Vector2(576.00006, 356.01886)
+scale = Vector2(0.21942857, 0.20327356)
 texture = ExtResource("1_2xhf7")
+region_enabled = true
+region_rect = Rect2(-7.836426, -21.475647, 5287.3403, 3532.1167)
+
+[node name="yellow_bird_1" parent="." instance=ExtResource("4_3qhfl")]
+z_index = 1
+freeze = true
+contact_monitor = true
+max_contacts_reported = 10
 
 [node name="BlueBird" parent="." instance=ExtResource("2_nq57p")]
-position = Vector2(207, 459)
+z_index = 1
+position = Vector2(251, 323)
+physics_material_override = SubResource("PhysicsMaterial_2ojh4")
+freeze = true
+contact_monitor = true
+max_contacts_reported = 10
+script = SubResource("GDScript_k4lg4")
+
+[node name="green_bird_1" parent="." instance=ExtResource("3_b578h")]
+z_index = 1
+
+[node name="Slingshot" parent="." instance=ExtResource("2_5o0nr")]
+position = Vector2(234, 497)
+script = ExtResource("4_jbaw6")
+max_birds = 3
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(270, 310)
+scale = Vector2(1.5, 1)
+offset = Vector2(200, 20)
+limit_left = -205
+limit_top = 13
+limit_right = 2121
+limit_bottom = 672
+
+[node name="Level3" type="Node2D" parent="."]
+
+[node name="SmallPalkaIron" parent="Level3" instance=ExtResource("2_mniyy")]
+position = Vector2(1051, 559)
+rotation = 1.5707964
+
+[node name="SmallPalkaIron2" parent="Level3" instance=ExtResource("2_mniyy")]
+position = Vector2(1143, 559)
+rotation = 1.5707964
+
+[node name="SmallPalkaIron3" parent="Level3" instance=ExtResource("2_mniyy")]
+position = Vector2(1097, 508)
+
+[node name="BigPalka" parent="Level3" instance=ExtResource("3_b6bkb")]
+position = Vector2(1216, 627)
+
+[node name="BlackCat1" parent="Level3" instance=ExtResource("7_247ip")]
+position = Vector2(1094, 569)
+
+[node name="BigPalka2" parent="Level3" instance=ExtResource("3_b6bkb")]
+position = Vector2(971, 627)
+
+[node name="SmallPalkaTree" parent="Level3" instance=ExtResource("5_5o0nr")]
+position = Vector2(1014, 560)
+rotation = 1.5707964
+
+[node name="SmallPalkaTree2" parent="Level3" instance=ExtResource("5_5o0nr")]
+position = Vector2(1181, 560)
+rotation = 1.5707964
+
+[node name="SmallPalkaTree4" parent="Level3" instance=ExtResource("5_5o0nr")]
+position = Vector2(1097, 488)
+
+[node name="SmallPalkaTree5" parent="Level3" instance=ExtResource("5_5o0nr")]
+position = Vector2(1037, 483.00003)
+rotation = -0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="SmallPalkaTree6" parent="Level3" instance=ExtResource("5_5o0nr")]
+position = Vector2(1098, 439)
+
+[node name="SmallPalkaTree3" parent="Level3" instance=ExtResource("5_5o0nr")]
+position = Vector2(1157, 484.00003)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="PalkaIce" parent="Level3" instance=ExtResource("6_71jtq")]
+position = Vector2(951, 497)
+
+[node name="PalkaIce2" parent="Level3" instance=ExtResource("6_71jtq")]
+position = Vector2(1271, 497)
+
+[node name="PalkaIce3" parent="Level3" instance=ExtResource("6_71jtq")]
+position = Vector2(1199, 406)
+rotation = 1.5707964
+
+[node name="PalkaIce4" parent="Level3" instance=ExtResource("6_71jtq")]
+position = Vector2(993, 407)
+rotation = 1.5707964
+
+[node name="SmallPalkaIce" parent="Level3" instance=ExtResource("7_jbaw6")]
+position = Vector2(1098, 417)
+
+[node name="BlackCat2" parent="Level3" instance=ExtResource("7_247ip")]
+position = Vector2(1201, 355)
+
+[node name="WhiteCat1" parent="Level3" instance=ExtResource("5_ry1uj")]
+position = Vector2(963, 352)
 
 [node name="ScreenBounds" type="Node2D" parent="."]
 
 [node name="TopWall" type="StaticBody2D" parent="ScreenBounds"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBounds/TopWall"]
-position = Vector2(576, 3.5)
+position = Vector2(1156, 3.5)
 shape = SubResource("RectangleShape2D_nq57p")
 
 [node name="BottomWall" type="StaticBody2D" parent="ScreenBounds"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBounds/BottomWall"]
-position = Vector2(576, 623.5)
+position = Vector2(1157, 680)
 shape = SubResource("RectangleShape2D_b578h")
 
 [node name="LeftWall" type="StaticBody2D" parent="ScreenBounds"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBounds/LeftWall"]
-position = Vector2(3.5, 303)
+position = Vector2(5, 329.5)
 shape = SubResource("RectangleShape2D_3qhfl")
 
 [node name="RightWall" type="StaticBody2D" parent="ScreenBounds"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBounds/RightWall"]
-position = Vector2(1151, 303)
+position = Vector2(2309.5, 303)
 shape = SubResource("RectangleShape2D_ry1uj")
-
-[node name="green_bird_1" parent="." instance=ExtResource("3_b578h")]
-position = Vector2(38, 454)
-
-[node name="GreenBird2" parent="." instance=ExtResource("4_3qhfl")]
-position = Vector2(114, 452)
-
-[node name="WhiteCat1" parent="." instance=ExtResource("5_ry1uj")]
-position = Vector2(357, 456)
-
-[node name="YellowCat1" parent="." instance=ExtResource("6_rjx8e")]
-position = Vector2(439, 460)
-
-[node name="BlackCat1" parent="." instance=ExtResource("7_247ip")]
-position = Vector2(521, 460)
-
-[node name="PinkBird1" parent="." instance=ExtResource("8_7q3gy")]
-position = Vector2(281, 457)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -88,3 +200,8 @@ visible = false
 
 [node name="LoseMenu" parent="CanvasLayer" instance=ExtResource("11_5o0nr")]
 visible = false
+
+[connection signal="body_entered" from="yellow_bird_1" to="Slingshot" method="_on_yellow_bird_1_body_entered"]
+[connection signal="body_entered" from="BlueBird" to="Slingshot" method="_on_blue_bird_body_entered"]
+[connection signal="body_entered" from="green_bird_1" to="Slingshot" method="_on_green_bird_1_body_entered"]
+[connection signal="ready" from="CanvasLayer/WinMenu" to="CanvasLayer/WinMenu" method="_on_ready"]

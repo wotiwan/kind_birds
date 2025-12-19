@@ -1,44 +1,115 @@
-[gd_scene load_steps=15 format=3 uid="uid://cqb7mbpfu2ixm"]
+[gd_scene load_steps=23 format=3 uid="uid://cqb7mbpfu2ixm"]
 
+[ext_resource type="Script" uid="uid://dg2bl7mb8g6v5" path="res://scripts/main_second_scene.gd" id="1_k05yt"]
 [ext_resource type="Texture2D" uid="uid://cvcuycj3lw702" path="res://assets/textures/45353.jpg" id="1_wr80a"]
 [ext_resource type="PackedScene" uid="uid://bx4coilva8stw" path="res://scenes/bird_or_enemy/blue_bird_1.tscn" id="2_wr80a"]
 [ext_resource type="PackedScene" uid="uid://cj0cpfs4ylas1" path="res://scenes/slingshot.tscn" id="3_70jnc"]
-[ext_resource type="PackedScene" uid="uid://qdmnbi7kjgmj" path="res://scenes/levels/level_2.tscn" id="4_srtn1"]
-[ext_resource type="PackedScene" uid="uid://db5vml3mophj" path="res://scenes/levels/level_3.tscn" id="5_3lxov"]
-[ext_resource type="PackedScene" uid="uid://cv5gkmoqbbwex" path="res://scenes/levels/level_4.tscn" id="6_d71sn"]
-[ext_resource type="PackedScene" uid="uid://opiq73dfgrqr" path="res://scenes/levels/level_5.tscn" id="7_kvnfp"]
+[ext_resource type="PackedScene" uid="uid://bwn0wsjearxo5" path="res://scenes/bird_or_enemy/green_bird_1.tscn" id="3_afim2"]
+[ext_resource type="PackedScene" uid="uid://d0rciadugce1d" path="res://scenes/tilesv1/big_palka.tscn" id="6_8j7et"]
+[ext_resource type="Script" uid="uid://bkkq1lrjyqclk" path="res://scripts/slingshot_scene_two.gd" id="6_78b78"]
+[ext_resource type="PackedScene" uid="uid://b38q6ujmrou8u" path="res://scenes/tilesv1/sredne_square.tscn" id="7_78b78"]
+[ext_resource type="PackedScene" uid="uid://8tcrhiyea8d3" path="res://scenes/bird_or_enemy/pink_bird_1.tscn" id="7_u2isd"]
 [ext_resource type="PackedScene" uid="uid://yn86viinomhs" path="res://scenes/UI/pause_menu.tscn" id="8_2egt0"]
+[ext_resource type="PackedScene" uid="uid://cvtcj3uqe7uhm" path="res://scenes/tilesv1/small_square.tscn" id="8_u2isd"]
 [ext_resource type="PackedScene" uid="uid://dkxsgkqll0qpe" path="res://scenes/UI/win_menu.tscn" id="9_afim2"]
+[ext_resource type="PackedScene" uid="uid://dymuk3qdgdr2c" path="res://scenes/blocks2/small_palka_iron.tscn" id="9_orp5c"]
+[ext_resource type="PackedScene" uid="uid://f256akccot37" path="res://scenes/blocks2/small_palka_tree.tscn" id="10_jpu58"]
 [ext_resource type="PackedScene" uid="uid://b38aobkagdcfr" path="res://scenes/UI/lose_menu.tscn" id="10_k05yt"]
+[ext_resource type="PackedScene" uid="uid://cloucwpafhyjp" path="res://scenes/bird_or_enemy/black_cat_1.tscn" id="11_qnjof"]
+[ext_resource type="PackedScene" uid="uid://pvt23ypo3ehq" path="res://scenes/bird_or_enemy/yellow_cat_1.tscn" id="12_2r8qc"]
+[ext_resource type="PackedScene" uid="uid://xbty046w77kh" path="res://scenes/bird_or_enemy/white_cat_1.tscn" id="13_bf4uh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3lxov"]
 size = Vector2(1139, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr80a"]
-size = Vector2(1141, 73)
+size = Vector2(2096.5, 73)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70jnc"]
 size = Vector2(8, 648)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srtn1"]
-size = Vector2(5, 648)
+size = Vector2(0, 712)
 
 [node name="SecondScene" type="Node2D"]
+script = ExtResource("1_k05yt")
 
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
-scale = Vector2(0.15880893, 0.2115573)
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(1052.8871, 390.5)
+scale = Vector2(0.2904831, 0.25497878)
 texture = ExtResource("1_wr80a")
+region_enabled = true
+region_rect = Rect2(-4.512085, 19.743958, 7237.5894, 3033.72)
 
 [node name="BlueBird" parent="." instance=ExtResource("2_wr80a")]
 z_index = 1
-position = Vector2(422, 246)
+position = Vector2(328, 360)
+contact_monitor = true
+max_contacts_reported = 10
+
+[node name="green_bird_1" parent="." instance=ExtResource("3_afim2")]
+
+[node name="PinkBird1" parent="." instance=ExtResource("7_u2isd")]
+z_index = 1
+freeze = true
+contact_monitor = true
+max_contacts_reported = 10
 
 [node name="Slingshot" parent="." instance=ExtResource("3_70jnc")]
-position = Vector2(397, 442)
+position = Vector2(312, 547)
+script = ExtResource("6_78b78")
+max_birds = 3
 
-[node name="Level 2" parent="." instance=ExtResource("4_srtn1")]
-position = Vector2(1377, 233)
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(300, 340)
+offset = Vector2(200, 0)
+limit_left = -194
+limit_top = 71
+limit_right = 2132
+limit_bottom = 779
+
+[node name="Level 2" type="Node2D" parent="."]
+
+[node name="BigPalka" parent="Level 2" instance=ExtResource("6_8j7et")]
+position = Vector2(1041, 674)
+
+[node name="SredneSquare" parent="Level 2" instance=ExtResource("7_78b78")]
+position = Vector2(1114, 597)
+
+[node name="SmallSqure" parent="Level 2" instance=ExtResource("8_u2isd")]
+position = Vector2(1036, 622)
+
+[node name="SmallPalkaIron" parent="Level 2" instance=ExtResource("9_orp5c")]
+position = Vector2(933, 606)
+rotation = 1.5707964
+
+[node name="SmallPalkaIron2" parent="Level 2" instance=ExtResource("9_orp5c")]
+position = Vector2(1027, 556)
+rotation = 1.5707964
+
+[node name="SmallPalkaIron3" parent="Level 2" instance=ExtResource("9_orp5c")]
+position = Vector2(1119, 506)
+rotation = 1.5707964
+
+[node name="SmallPalkaTree" parent="Level 2" instance=ExtResource("10_jpu58")]
+position = Vector2(934, 556)
+
+[node name="SmallPalkaTree2" parent="Level 2" instance=ExtResource("10_jpu58")]
+position = Vector2(1028, 505)
+
+[node name="SmallPalkaTree3" parent="Level 2" instance=ExtResource("10_jpu58")]
+position = Vector2(1116, 455)
+
+[node name="BlackCat1" parent="Level 2" instance=ExtResource("11_qnjof")]
+position = Vector2(928, 515)
+
+[node name="YellowCat1" parent="Level 2" instance=ExtResource("12_2r8qc")]
+position = Vector2(1118, 408)
+
+[node name="WhiteCat1" parent="Level 2" instance=ExtResource("13_bf4uh")]
+position = Vector2(1026, 462)
 
 [node name="ScreenBounds" type="Node2D" parent="."]
 
@@ -51,7 +122,7 @@ shape = SubResource("RectangleShape2D_3lxov")
 [node name="BottomWall" type="StaticBody2D" parent="ScreenBounds"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBounds/BottomWall"]
-position = Vector2(576.5, 611.5)
+position = Vector2(1055.75, 744)
 shape = SubResource("RectangleShape2D_wr80a")
 
 [node name="LeftWall" type="StaticBody2D" parent="ScreenBounds"]
@@ -63,17 +134,8 @@ shape = SubResource("RectangleShape2D_70jnc")
 [node name="RightWall" type="StaticBody2D" parent="ScreenBounds"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBounds/RightWall"]
-position = Vector2(1149.5, 324)
+position = Vector2(1760, 356)
 shape = SubResource("RectangleShape2D_srtn1")
-
-[node name="Level 3" parent="." instance=ExtResource("5_3lxov")]
-position = Vector2(1457, 486)
-
-[node name="Level 4" parent="." instance=ExtResource("6_d71sn")]
-position = Vector2(1819, 270)
-
-[node name="Level 5" parent="." instance=ExtResource("7_kvnfp")]
-position = Vector2(870, 367)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -85,3 +147,8 @@ visible = false
 
 [node name="LoseMenu" parent="CanvasLayer" instance=ExtResource("10_k05yt")]
 visible = false
+
+[connection signal="body_entered" from="BlueBird" to="Slingshot" method="_on_blue_bird_body_entered"]
+[connection signal="body_entered" from="green_bird_1" to="Slingshot" method="_on_green_bird_1_body_entered"]
+[connection signal="body_entered" from="PinkBird1" to="Slingshot" method="_on_pink_bird_1_body_entered"]
+[connection signal="ready" from="CanvasLayer/WinMenu" to="CanvasLayer/WinMenu" method="second_level"]
