@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cqb7mbpfu2ixm"]
+[gd_scene load_steps=25 format=3 uid="uid://cqb7mbpfu2ixm"]
 
 [ext_resource type="Script" uid="uid://dg2bl7mb8g6v5" path="res://scripts/main_second_scene.gd" id="1_k05yt"]
 [ext_resource type="Texture2D" uid="uid://cvcuycj3lw702" path="res://assets/textures/45353.jpg" id="1_wr80a"]
@@ -12,12 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://yn86viinomhs" path="res://scenes/UI/pause_menu.tscn" id="8_2egt0"]
 [ext_resource type="PackedScene" uid="uid://cvtcj3uqe7uhm" path="res://scenes/tilesv1/small_square.tscn" id="8_u2isd"]
 [ext_resource type="PackedScene" uid="uid://dkxsgkqll0qpe" path="res://scenes/UI/win_menu.tscn" id="9_afim2"]
+[ext_resource type="Script" uid="uid://bj57w1ubsbr7t" path="res://scripts/wood.gd" id="9_jpu58"]
 [ext_resource type="PackedScene" uid="uid://dymuk3qdgdr2c" path="res://scenes/blocks2/small_palka_iron.tscn" id="9_orp5c"]
 [ext_resource type="PackedScene" uid="uid://f256akccot37" path="res://scenes/blocks2/small_palka_tree.tscn" id="10_jpu58"]
 [ext_resource type="PackedScene" uid="uid://b38aobkagdcfr" path="res://scenes/UI/lose_menu.tscn" id="10_k05yt"]
 [ext_resource type="PackedScene" uid="uid://cloucwpafhyjp" path="res://scenes/bird_or_enemy/black_cat_1.tscn" id="11_qnjof"]
 [ext_resource type="PackedScene" uid="uid://pvt23ypo3ehq" path="res://scenes/bird_or_enemy/yellow_cat_1.tscn" id="12_2r8qc"]
 [ext_resource type="PackedScene" uid="uid://xbty046w77kh" path="res://scenes/bird_or_enemy/white_cat_1.tscn" id="13_bf4uh"]
+[ext_resource type="Script" uid="uid://jabqaiiffr6n" path="res://scripts/stone.gd" id="13_qnjof"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3lxov"]
 size = Vector2(1139, 7)
@@ -29,7 +31,7 @@ size = Vector2(2096.5, 73)
 size = Vector2(8, 648)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srtn1"]
-size = Vector2(0, 712)
+size = Vector2(48, 712)
 
 [node name="SecondScene" type="Node2D"]
 script = ExtResource("1_k05yt")
@@ -67,40 +69,72 @@ position = Vector2(300, 340)
 offset = Vector2(200, 0)
 limit_left = -194
 limit_top = 71
-limit_right = 2132
+limit_right = 1760
 limit_bottom = 779
 
 [node name="Level 2" type="Node2D" parent="."]
 
 [node name="BigPalka" parent="Level 2" instance=ExtResource("6_8j7et")]
 position = Vector2(1041, 674)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("9_jpu58")
 
 [node name="SredneSquare" parent="Level 2" instance=ExtResource("7_78b78")]
 position = Vector2(1114, 597)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("9_jpu58")
 
 [node name="SmallSqure" parent="Level 2" instance=ExtResource("8_u2isd")]
 position = Vector2(1036, 622)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("9_jpu58")
 
 [node name="SmallPalkaIron" parent="Level 2" instance=ExtResource("9_orp5c")]
 position = Vector2(933, 606)
 rotation = 1.5707964
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("13_qnjof")
 
 [node name="SmallPalkaIron2" parent="Level 2" instance=ExtResource("9_orp5c")]
 position = Vector2(1027, 556)
 rotation = 1.5707964
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("13_qnjof")
 
 [node name="SmallPalkaIron3" parent="Level 2" instance=ExtResource("9_orp5c")]
 position = Vector2(1119, 506)
 rotation = 1.5707964
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("13_qnjof")
 
 [node name="SmallPalkaTree" parent="Level 2" instance=ExtResource("10_jpu58")]
 position = Vector2(934, 556)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("9_jpu58")
 
 [node name="SmallPalkaTree2" parent="Level 2" instance=ExtResource("10_jpu58")]
 position = Vector2(1028, 505)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("9_jpu58")
+hp = 3000.0
+damage_threshold = 40.0
+fall_speed_threshold = 600.0
+fall_delta_threshold = 250.0
+fall_damage_multiplier = 0.6
 
 [node name="SmallPalkaTree3" parent="Level 2" instance=ExtResource("10_jpu58")]
 position = Vector2(1116, 455)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("9_jpu58")
 
 [node name="BlackCat1" parent="Level 2" instance=ExtResource("11_qnjof")]
 position = Vector2(928, 515)
@@ -134,7 +168,7 @@ shape = SubResource("RectangleShape2D_70jnc")
 [node name="RightWall" type="StaticBody2D" parent="ScreenBounds"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBounds/RightWall"]
-position = Vector2(1760, 356)
+position = Vector2(1976, 351)
 shape = SubResource("RectangleShape2D_srtn1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

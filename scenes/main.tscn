@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bksq1mht5nxuk"]
+[gd_scene load_steps=23 format=3 uid="uid://bksq1mht5nxuk"]
 
 [ext_resource type="Script" uid="uid://cwuf5o1a1oejv" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://ddwpla4x7cvoi" path="res://assets/textures/8817533.jpg" id="2_0wfyh"]
@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://f256akccot37" path="res://scenes/blocks2/small_palka_tree.tscn" id="7_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://yn86viinomhs" path="res://scenes/UI/pause_menu.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://dg3mnu7qvxk7x" path="res://scenes/blocks2/triangle_tree.tscn" id="8_jkv2x"]
+[ext_resource type="Script" uid="uid://baoyu20xmvy7y" path="res://scripts/glass.gd" id="8_muem4"]
 [ext_resource type="PackedScene" uid="uid://dpt4orux25teu" path="res://scenes/blocks2/palka_tree.tscn" id="9_jbj1t"]
+[ext_resource type="Script" uid="uid://bj57w1ubsbr7t" path="res://scripts/wood.gd" id="10_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://xbty046w77kh" path="res://scenes/bird_or_enemy/white_cat_1.tscn" id="10_muem4"]
 [ext_resource type="PackedScene" uid="uid://cso3jrwqe0mim" path="res://scenes/blocks2/triangle90_tree.tscn" id="11_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://cl1n1ybmsq255" path="res://scenes/blocks2/small_square_tree.tscn" id="12_0ld40"]
@@ -57,66 +59,123 @@ position = Vector2(934, 802)
 [node name="SmallPalkaIce2" parent="Level1" instance=ExtResource("6_trceg")]
 position = Vector2(958, 997)
 rotation = 1.5707964
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("8_muem4")
 
 [node name="SmallPalkaIce" parent="Level1" instance=ExtResource("6_trceg")]
 position = Vector2(913, 997)
 rotation = 1.5707964
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("8_muem4")
 
 [node name="SmallPalkaTree6" parent="Level1" instance=ExtResource("7_a8y0u")]
 position = Vector2(936, 946)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="SmallPalkaTree5" parent="Level1" instance=ExtResource("7_a8y0u")]
 position = Vector2(935, 1048)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="TriangleTree" parent="Level1" instance=ExtResource("8_jkv2x")]
 position = Vector2(935, 693)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="PalkaTree4" parent="Level1" instance=ExtResource("9_jbj1t")]
 position = Vector2(933, 754)
 rotation = 1.5707964
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="SmallPalkaTree4" parent="Level1" instance=ExtResource("7_a8y0u")]
 position = Vector2(983, 795)
 rotation = 1.5707964
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="SmallPalkaTree3" parent="Level1" instance=ExtResource("7_a8y0u")]
 position = Vector2(886, 795)
 rotation = 1.5707964
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="PalkaTree3" parent="Level1" instance=ExtResource("9_jbj1t")]
 position = Vector2(934, 854)
 rotation = 1.5707964
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="Triangle90Tree2" parent="Level1" instance=ExtResource("11_dp3eg")]
 position = Vector2(810, 1076)
 rotation = -1.5707964
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="PalkaTree2" parent="Level1" instance=ExtResource("9_jbj1t")]
 position = Vector2(1013, 955)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="SmallSquareTree4" parent="Level1" instance=ExtResource("12_0ld40")]
 position = Vector2(872, 1096)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="SmallSquareTree3" parent="Level1" instance=ExtResource("12_0ld40")]
 position = Vector2(913, 1096)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="SmallSquareTree2" parent="Level1" instance=ExtResource("12_0ld40")]
 position = Vector2(954, 1096)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="SmallSquareTree" parent="Level1" instance=ExtResource("12_0ld40")]
 position = Vector2(995, 1096)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="Triangle90Tree" parent="Level1" instance=ExtResource("11_dp3eg")]
 position = Vector2(1056, 1076)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="SmallPalkaTree2" parent="Level1" instance=ExtResource("7_a8y0u")]
 position = Vector2(975, 1067)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="SmallPalkaTree" parent="Level1" instance=ExtResource("7_a8y0u")]
 position = Vector2(893, 1067)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="PalkaTree" parent="Level1" instance=ExtResource("9_jbj1t")]
 position = Vector2(873, 955)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("10_dp3eg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(298, 832)

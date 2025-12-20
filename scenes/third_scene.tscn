@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b7h8fe2awq2xd"]
+[gd_scene load_steps=27 format=3 uid="uid://b7h8fe2awq2xd"]
 
 [ext_resource type="Texture2D" uid="uid://ux6fxf4g2bwo" path="res://assets/textures/41524.jpg" id="1_2xhf7"]
 [ext_resource type="Script" uid="uid://dj8laln2nkffj" path="res://scripts/main_scene_three.gd" id="1_71jtq"]
@@ -15,8 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://cloucwpafhyjp" path="res://scenes/bird_or_enemy/black_cat_1.tscn" id="7_247ip"]
 [ext_resource type="PackedScene" uid="uid://dqn7wi3mtlh38" path="res://scenes/blocks2/small_palka_ice.tscn" id="7_jbaw6"]
 [ext_resource type="PackedScene" uid="uid://yn86viinomhs" path="res://scenes/UI/pause_menu.tscn" id="9_mniyy"]
+[ext_resource type="Script" uid="uid://jabqaiiffr6n" path="res://scripts/stone.gd" id="9_qjlac"]
 [ext_resource type="PackedScene" uid="uid://dkxsgkqll0qpe" path="res://scenes/UI/win_menu.tscn" id="10_b6bkb"]
 [ext_resource type="PackedScene" uid="uid://b38aobkagdcfr" path="res://scenes/UI/lose_menu.tscn" id="11_5o0nr"]
+[ext_resource type="Script" uid="uid://bj57w1ubsbr7t" path="res://scripts/wood.gd" id="11_r81rt"]
+[ext_resource type="Script" uid="uid://baoyu20xmvy7y" path="res://scripts/glass.gd" id="15_8gm5p"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2ojh4"]
 bounce = 0.4
@@ -90,6 +93,7 @@ max_birds = 3
 position = Vector2(270, 310)
 scale = Vector2(1.5, 1)
 offset = Vector2(200, 20)
+zoom = Vector2(0.8, 1)
 limit_left = -205
 limit_top = 13
 limit_right = 2121
@@ -100,63 +104,111 @@ limit_bottom = 672
 [node name="SmallPalkaIron" parent="Level3" instance=ExtResource("2_mniyy")]
 position = Vector2(1051, 559)
 rotation = 1.5707964
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("9_qjlac")
 
 [node name="SmallPalkaIron2" parent="Level3" instance=ExtResource("2_mniyy")]
 position = Vector2(1143, 559)
 rotation = 1.5707964
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("9_qjlac")
 
 [node name="SmallPalkaIron3" parent="Level3" instance=ExtResource("2_mniyy")]
 position = Vector2(1097, 508)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("9_qjlac")
 
 [node name="BigPalka" parent="Level3" instance=ExtResource("3_b6bkb")]
 position = Vector2(1216, 627)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("11_r81rt")
 
 [node name="BlackCat1" parent="Level3" instance=ExtResource("7_247ip")]
 position = Vector2(1094, 569)
 
 [node name="BigPalka2" parent="Level3" instance=ExtResource("3_b6bkb")]
 position = Vector2(971, 627)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("11_r81rt")
 
 [node name="SmallPalkaTree" parent="Level3" instance=ExtResource("5_5o0nr")]
 position = Vector2(1014, 560)
 rotation = 1.5707964
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("11_r81rt")
 
 [node name="SmallPalkaTree2" parent="Level3" instance=ExtResource("5_5o0nr")]
 position = Vector2(1181, 560)
 rotation = 1.5707964
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("11_r81rt")
 
 [node name="SmallPalkaTree4" parent="Level3" instance=ExtResource("5_5o0nr")]
 position = Vector2(1097, 488)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("11_r81rt")
 
 [node name="SmallPalkaTree5" parent="Level3" instance=ExtResource("5_5o0nr")]
 position = Vector2(1037, 483.00003)
 rotation = -0.7853982
 scale = Vector2(0.99999994, 0.99999994)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("11_r81rt")
 
 [node name="SmallPalkaTree6" parent="Level3" instance=ExtResource("5_5o0nr")]
 position = Vector2(1098, 439)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("11_r81rt")
 
 [node name="SmallPalkaTree3" parent="Level3" instance=ExtResource("5_5o0nr")]
 position = Vector2(1157, 484.00003)
 rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("11_r81rt")
 
 [node name="PalkaIce" parent="Level3" instance=ExtResource("6_71jtq")]
 position = Vector2(951, 497)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("15_8gm5p")
 
 [node name="PalkaIce2" parent="Level3" instance=ExtResource("6_71jtq")]
 position = Vector2(1271, 497)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("15_8gm5p")
 
 [node name="PalkaIce3" parent="Level3" instance=ExtResource("6_71jtq")]
 position = Vector2(1199, 406)
 rotation = 1.5707964
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("15_8gm5p")
 
 [node name="PalkaIce4" parent="Level3" instance=ExtResource("6_71jtq")]
 position = Vector2(993, 407)
 rotation = 1.5707964
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("15_8gm5p")
 
 [node name="SmallPalkaIce" parent="Level3" instance=ExtResource("7_jbaw6")]
 position = Vector2(1098, 417)
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("15_8gm5p")
 
 [node name="BlackCat2" parent="Level3" instance=ExtResource("7_247ip")]
 position = Vector2(1201, 355)
