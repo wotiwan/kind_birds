@@ -23,8 +23,8 @@ var slingIdlePosition: Vector2 = Vector2(15, -158);
 @onready var hitBox = $StaticBody2D/HitBox/HitBoxArea;
 @onready var leftLine = $leftLine;
 @onready var rightLine = $rightLine;
-
 ## Птица в начале уровня, поменять при необходимости
+
 var startBird: String = "BlueBird";
 ## Следующие птицы загружаются на сцену динамически
 var secondBird: String = "green_bird_1";
@@ -53,6 +53,7 @@ func _process(delta: float) -> void:
 				leftLine.points[0] = mousePosition
 				rightLine.points[0] = mousePosition
 			else:
+				birds_used+=1
 				## Происходит когда игрок отпускает ЛКМ
 				currentBird.set_freeze_enabled(0)
 				var mousePosition = get_global_mouse_position()
@@ -68,9 +69,10 @@ func _process(delta: float) -> void:
 			rightLine.points[0] = slingIdlePosition
 		SlingState.RESET:
 			slingState = SlingState.IDLE
-			await get_tree().create_timer(0.5).timeout
+			
 			if birds_used == max_birds:
 				empty_birds.emit()
+				bird_respawned.emit(currentBird)
 				return
 			if currentBird:
 				currentBird.set_freeze_enabled(true)
@@ -80,13 +82,11 @@ func _process(delta: float) -> void:
 				currentBird.visible = true
 				currentBird.position = Vector2(352, 779)
 				bird_respawned.emit(currentBird)
-				birds_used += 1
 
 
 func _on_hit_box_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("left_mouse_button_click"):
 		if birds_used<2:
-			print("LKM!")
 			slingState = SlingState.PULLING
 		else:
 			pass

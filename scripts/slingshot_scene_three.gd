@@ -56,7 +56,6 @@ func _process(delta: float) -> void:
 				rightLine.points[0] = mousePosition
 			else:
 				birds_used += 1
-				print(birds_used)
 				## Происходит когда игрок отпускает ЛКМ
 				currentBird.set_freeze_enabled(0)
 
@@ -76,7 +75,6 @@ func _process(delta: float) -> void:
 			await get_tree().create_timer(1.0).timeout
 			# если птицы закончились — просто выходим
 			if birds_used >= max_birds:
-				print("Все птицы использованы")
 				currentBird.visible = false
 				bird_respawned.emit(currentBird)
 				empty_birds.emit()
@@ -105,7 +103,6 @@ func _process(delta: float) -> void:
 func _on_hit_box_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("left_mouse_button_click"):
 		if birds_used<=2:
-			print("LKM!")
 			slingState = SlingState.PULLING
 		else:
 			pass

@@ -89,5 +89,4 @@ func _die() -> void:
 	_emit_signal_delayed()
 
 func _emit_signal_delayed() -> void:
-	await get_tree().create_timer(death_signal_delay).timeout
 	emit_signal("bird_defeated")

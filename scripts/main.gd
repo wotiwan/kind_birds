@@ -13,7 +13,7 @@ var birdsThrown: int = 0  # Это не трогаем
 
 var catsToDefeat: int = 1  # Тут указываем кол-во кошек на сцене
 var catsDefeated: int = 0  # Это не трогаем
-var non_empty_birds:bool = false
+var empty_birds:bool = false
 @export var death_signal_delay: float = 2.1 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,7 +27,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if catsDefeated >= catsToDefeat:  # win condition
 		win_menu.set_active()
-	elif birdsThrown >= birdsToThrow and non_empty_birds:
+	elif birdsThrown >= birdsToThrow and empty_birds:
 		await get_tree().create_timer(death_signal_delay).timeout
 		if catsDefeated >= catsToDefeat:
 			win_menu.set_active()
@@ -50,4 +50,4 @@ func _on_bird_respawned(newBird: Node2D) -> void:
 	player = newBird
 	isCameraFixed = true
 func _empty_checked():
-	non_empty_birds = true
+	empty_birds = true
